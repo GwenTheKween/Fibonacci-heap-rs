@@ -1,0 +1,6 @@
+[package]
+name = "rusted_fibonacci_heaps"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
