@@ -21,7 +21,7 @@ fn read_input() -> String{
     input.trim().to_string()
 }
 
-fn insert(h: &mut FibHeap<i32>){
+fn insert(h: &mut FibHeap){
     println!("Please enter element to be inserted");
     match read_input().parse() {
         Ok(n) => h.insert(n),
@@ -33,8 +33,8 @@ fn remove(){
     println!("not yet implemented");
 }
 
-fn print_heap(){
-    println!("not yet implemented");
+fn print_heap(h: &FibHeap){
+    h.print_heap()
 }
 
 fn restart(){
@@ -42,7 +42,7 @@ fn restart(){
 }
 
 fn main(){
-    let mut h = FibHeap::<i32>::new();
+    let mut h = FibHeap::new();
     print_menu();
     loop{
         print_options();
@@ -55,7 +55,7 @@ fn main(){
         match option {
             1 => insert(&mut h),
             2 => remove(),
-            3 => print_heap(),
+            3 => print_heap(&h),
             4 => restart(),
             _ => break,
         }
